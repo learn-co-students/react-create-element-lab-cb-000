@@ -5,18 +5,37 @@
 1. Practice using `createElement()`
 2. Build a simple view using `createElement()`
 
-## Overview
+## Representing
+![Internet.](https://media.giphy.com/media/l41YlCTJyClA4HFba/giphy.gif)
 
-Students should build and render a simple view — this is a good opportunity to
-introduce `props` more fully. Maybe students can build a simple contact form?
-We'll need to use `defaultValue` — it's a little early to introduce controlled
-components — but it will give us something to test.
+Before we start, don't forget to add the `React` and `ReactDOM` libraries to your `index.html`:
 
-About tests: everything'll be easier if you use `mocha` and the test script
-that's provided in this lab. You can use any setup that you'd like — Babel works
-well for compiling students' code — but make sure that the tests are reported in
-a valid `.results.json`.
+```html
+<script src="node_modules/react/dist/react.js"></script>
+<script src="node_modules/react-dom/dist/react-dom.js"></script>
+```
+
+This should be _behind_ any page content, and _before_ your own `index.js` script.
+
+Your task is to create a React element that represents _you_ (or a close approximation, hopefully)! In the `index.js`
+file, create a variable called `meInReact`. This variable should be a React element, and should have the following
+structure:
+
+```html
+<div class="me">
+  <h1>An Awesome Person</h1>
+  <p>Who is learning React</p>
+  
+  <ul class="me__interests">
+    <li>JavaScript</li>
+    <li>React</li>
+    <li>Movies</li>
+    <li>Ice cream</li>
+  </ul>
+</div>
+```
+
+Feel free to render out the component in the DOM using `ReactDOM.render()`.
 
 ## Resources
-
 - [React Top-Level API](https://facebook.github.io/react/docs/top-level-api.html)
