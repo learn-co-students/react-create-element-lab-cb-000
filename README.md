@@ -1,9 +1,8 @@
 # React createElement() Lab
 
-## Objectives
+## Overview
 
-1. Practice using `createElement()`
-2. Build a simple view using `createElement()`
+In this lab, you'll build a simple view using `createElement()`.
 
 ## Representing
 ![Internet.](https://media.giphy.com/media/l41YlCTJyClA4HFba/giphy.gif)
