@@ -15,7 +15,7 @@ Before we start, don't forget to add the `React` and `ReactDOM` libraries to you
 <script src="node_modules/react-dom/dist/react-dom.js"></script>
 ```
 
-This should be _behind_ any page content, and _before_ your own `index.js` script.
+This should be _after_ any page content, and _before_ your own `index.js` script.
 
 Your task is to create a React element that represents _you_ (or a close approximation, hopefully)! In the `index.js`
 file, create a variable called `meInReact`. This variable should be a React element, and should have the following
