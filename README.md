@@ -14,7 +14,7 @@ Your task will be to create a React element that represents _you_ (or a close ap
   <h1>An Awesome Person</h1>
   <p>Who is learning React</p>
   
-  <ul class="me__interests">
+  <ul class="my-interests">
     <li>JavaScript</li>
     <li>React</li>
     <li>Movies</li>
@@ -37,6 +37,13 @@ npm test
 ```
 
 Feel free to render out the component in the DOM using `ReactDOM.render()`.
+
+## NOTE!! 
+
+ignore the error messages for 
+
+> Warning: Each child in an array or iterator should have a unique "key" prop. Check the top-level render call using <ul> in li.
+
 
 ## Resources
 - [React Top-Level API](https://facebook.github.io/react/docs/top-level-api.html)
