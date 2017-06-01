@@ -1,68 +1,76 @@
-'use strict'
+import { expect } from 'chai';
+import sinon from 'sinon';
+import { shallow, mount } from 'enzyme';
+import React from 'react';
+import meInReact from '../src/index';
 
-describe('You in React', function () {
-  describe('Parent element', function () {
-    it('should have the right class', function () {
-      expect(meInReact.props.className).toEqual('me');
+describe('You in React', () => {
+  describe('Parent element', () => {
+    it('should have the right class', () => {
+      expect(meInReact.props.className).to.equal('me');
     });
 
-    it('should have three children', function () {
-      expect(meInReact.props.children.length).toEqual(3);
+    it('should have three children', () => {
+      expect(meInReact.props.children.length).to.equal(3);
     });
   });
 
-  describe('Title', function () {
+  describe('Title', () => {
     let element;
 
     before(() => {
       element = meInReact.props.children[0];
     });
 
-    it('should have the right tag', function () {
-      expect(element.type).toEqual('h1');
+    it('should have the right tag', () => {
+      expect(element.type).to.equal('h1');
     });
 
-    it('should contain the right text', function() {
-      expect(element.props.children).toEqual('An Awesome Person');
+    it('should contain the right text', () => {
+      expect(element.props.children).to.equal('An Awesome Person');
     });
   });
 
-  describe('Tagline', function () {
+  describe('Tagline', () => {
     let element;
 
     before(() => {
       element = meInReact.props.children[1];
     });
 
-    it('should have the right tag', function() {
-      expect(element.type).toEqual('p');
+    it('should have the right tag', () => {
+      expect(element.type).to.equal('p');
     });
 
-    it('should contain the right text', function() {
-      expect(element.props.children).toEqual('Who is learning React');
+    it('should contain the right text', () => {
+      expect(element.props.children).to.equal('Who is learning React');
     });
   });
 
-  describe('Interests', function () {
+  describe('Interests', () => {
     let element;
 
     before(() => {
       element = meInReact.props.children[2];
     });
 
-    it('should have the right tag', function() {
-      expect(element.type).toEqual('ul');
+    it('should have the right tag', () => {
+      expect(element.type).to.equal('ul');
     });
 
-    it('should have four children', function() {
-      expect(element.props.children.length).toEqual(4);
+    it('should have the right class', () => {
+      expect(element.props.className).to.equal('my-interests');
     });
 
-    it('should have the right interests', function() {
-      expect(element.props.children[0].props.children).toEqual('JavaScript');
-      expect(element.props.children[1].props.children).toEqual('React');
-      expect(element.props.children[2].props.children).toEqual('Movies');
-      expect(element.props.children[3].props.children).toEqual('Ice cream');
+    it('should have four children', () => {
+      expect(element.props.children.length).to.equal(4);
+    });
+
+    it('should have the right interests', () => {
+      expect(element.props.children[0].props.children).to.equal('JavaScript');
+      expect(element.props.children[1].props.children).to.equal('React');
+      expect(element.props.children[2].props.children).to.equal('Movies');
+      expect(element.props.children[3].props.children).to.equal('Ice cream');
     });
   });
 });
