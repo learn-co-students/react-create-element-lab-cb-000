@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//Code React element here
-
-
-
+// IMPORTANT!!!! uncomment the lines below to make your tests work
+/*
 ReactDOM.render(
-  {/* your element here */}, 
+  meInReact, 
   document.getElementById('root')
 );
+
+export default meInReact
+*/
