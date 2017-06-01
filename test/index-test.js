@@ -58,6 +58,10 @@ describe('You in React', () => {
       expect(element.type).to.equal('ul');
     });
 
+    it('should have the right class', () => {
+      expect(element.props.className).to.equal('my-interests');
+    });
+
     it('should have four children', () => {
       expect(element.props.children.length).to.equal(4);
     });
