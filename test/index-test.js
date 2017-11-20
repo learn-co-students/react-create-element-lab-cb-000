@@ -1,79 +1,59 @@
 import { expect } from 'chai';
-import sinon from 'sinon';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { OlderCoaster, InFrontOfYou, ButcherShop } from '../src/index'
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import React from 'react';
-import meInReact from '../src/index';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('You in React', () => {
-  describe('Parent element', () => {
-    it('should have the right class', () => {
-      expect(meInReact.props.className).to.equal('me');
-    });
+describe('OlderCoaster', () => {
+  let wrapper;
 
-    it('should have three children', () => {
-      expect(meInReact.props.children.length).to.equal(3);
-    });
+  before(() => {
+    wrapper = shallow(React.createElement(OlderCoaster));
   });
 
-  describe('Title', () => {
-    let element;
-
-    before(() => {
-      element = meInReact.props.children[0];
-    });
-
-    it('should have the right tag', () => {
-      expect(element.type).to.equal('h1');
-    });
-
-    it('should contain the right text', () => {
-      expect(element.props.children).to.equal('An Awesome Person');
-    });
+  it('renders withouth crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<OlderCoaster />, div);
   });
 
-  describe('Tagline', () => {
-    let element;
+  it('should have the right DOM markup', () => {
+    expect(wrapper.html()).to.equal(`<div class="oldercoaster"><p>Two grannies having the time of their life!</p><p>Passengers:</p><ul><li>Agnes</li><li>Muriel</li></ul></div>`);
+  });
+});
 
-    before(() => {
-      element = meInReact.props.children[1];
-    });
+describe('InFrontOfYou', () => {
+  let wrapper;
 
-    it('should have the right tag', () => {
-      expect(element.type).to.equal('p');
-    });
-
-    it('should contain the right text', () => {
-      expect(element.props.children).to.equal('Who is learning React');
-    });
+  before(() => {
+    wrapper = shallow(React.createElement(InFrontOfYou));
   });
 
-  describe('Interests', () => {
-    let element;
+  it('renders withouth crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<InFrontOfYou />, div);
+  });
 
-    before(() => {
-      element = meInReact.props.children[2];
-    });
+  it('should have the right DOM markup', () => {
+    expect(wrapper.html()).to.equal(`<div><p>You shouldn&#x27;t look too far.</p><p>Sometimes, the solution is right in front of you.</p></div>`);
+  });
+});
 
-    it('should have the right tag', () => {
-      expect(element.type).to.equal('ul');
-    });
+describe('ButcherShop', () => {
+  let wrapper;
 
-    it('should have the right class', () => {
-      expect(element.props.className).to.equal('my-interests');
-    });
+  before(() => {
+    wrapper = shallow(React.createElement(ButcherShop));
+  });
 
-    it('should have four children', () => {
-      expect(element.props.children.length).to.equal(4);
-    });
+  it('renders withouth crashing', () => {
+    const div = document.createElement('div');
+    ReactDOM.render(<ButcherShop />, div);
+  });
 
-    it('should have the right interests', () => {
-      expect(element.props.children[0].props.children).to.equal('JavaScript');
-      expect(element.props.children[1].props.children).to.equal('React');
-      expect(element.props.children[2].props.children).to.equal('Movies');
-      expect(element.props.children[3].props.children).to.equal('Ice cream');
-    });
+  it('should have the right DOM markup', () => {
+    expect(wrapper.html()).to.equal(`<div class="butcher-shop"><p>Hello! We have the following products for sale today:</p><ul><li>Tenderloin</li><li>Short ribs</li><li>Beef shin</li><li>Ribeye</li></ul></div>`);
   });
 });
