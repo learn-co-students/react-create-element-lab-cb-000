@@ -8,19 +8,19 @@ const title = React.createElement('h1', {},'An Awesome Person');
 const subtitle = React.createElement('p', {},'Who is learning React');
 const myList = React.createElement('ul', { className: 'my-interests'},
   [
-    React.createElement('li', { className: 'my-interests' }, 'Javascript'),
+    React.createElement('li', { className: 'my-interests' }, 'JavaScript'),
     React.createElement('li', { className: 'my-interests' }, 'React'),
     React.createElement('li', { className: 'my-interests' }, 'Movies'),
-    React.createElement('li', { className: 'my-interests' }, 'Ice Cream')
+    React.createElement('li', { className: 'my-interests' }, 'Ice cream')
   ]
 );
 
-const container = React.createElement('div', { className: 'me' }, [title, subtitle, myList])
+const meInReact = React.createElement('div', { className: 'me' }, [title, subtitle, myList])
 
 ReactDOM.render(
-  container,
+  meInReact,
   document.getElementById('global')
 );
 
-// export default meInReact;
-export default container;
+export default meInReact;
+// export default container;
